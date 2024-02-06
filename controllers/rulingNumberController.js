@@ -3,7 +3,7 @@ const RulingNumber = require("../models/ruling-number");
 class RullingNumberController {
   // [GET] /api/ruling_number
   async index(req, res) {
-    const rulingNumbers = await RulingNumber.find({
+    const rulingNumbers = await RulingNumber.findOne({
       number: req.params.number,
     });
     res.json(rulingNumbers);
