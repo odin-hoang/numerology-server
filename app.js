@@ -1,9 +1,11 @@
 const express = require("express");
+const cors = require("cors");
 const db = require("./config/db");
 const dotenv = require("dotenv");
 const rulingRoute = require("./routes/ruling-number");
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 dotenv.config();
 db.connect();
