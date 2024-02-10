@@ -6,6 +6,7 @@ class RullingNumberController {
     const rulingNumbers = await RulingNumber.findOne({
       number: req.params.number,
     });
+    console.log("Ngày sinh:", req.query.dob);
     res.json(rulingNumbers);
   }
   async create(req, res) {

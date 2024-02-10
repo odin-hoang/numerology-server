@@ -12,7 +12,7 @@ const dayRoute = require("./routes/day");
 const personalYearRoute = require("./routes/personal-year");
 const peakRoute = require("./routes/peak");
 const app = express();
-app.use(morgan("combined"));
+// app.use(morgan("combined"));
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());

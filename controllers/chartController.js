@@ -1,8 +1,8 @@
 const Chart = require("../models/chart");
 class ChartController {
   async get(req, res) {
-    const { chart } = req.body;
-    console.log(chart);
+    const { chart, name } = req.body;
+    console.log("Tên:", name);
     let meaningChart = [];
     for (let index = 0; index < chart.length; index++) {
       let count = chart[index];

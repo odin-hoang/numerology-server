@@ -3,7 +3,6 @@ const { SoulUrge, OuterExpression } = require("../models/power-of-name");
 class PowerOfNameController {
   async index(req, res) {
     const { soulUrge, outerExpression } = req.query;
-    console.log(soulUrge, outerExpression);
     const soulUrgeDoc = await SoulUrge.findOne({
       number: soulUrge,
     });
