@@ -5,7 +5,7 @@ class HistoryController {
     if (admin != process.env.ADMIN) {
       return res.status(401).json({ message: "Unauthorized" });
     }
-    const history = await History.find();
+    const history = await History.find().sort({ createdAt: -1 });
     res.status(200).json(history);
   }
   async create(req, res) {

@@ -11,7 +11,7 @@ $(document).ready(function () {
       success: function (data) {
         $("#main").show();
         $("#table-body").empty();
-        data.reverse().forEach(function (item, index) {
+        data.forEach(function (item, index) {
           let date = new Date(item.createdAt);
           date.setHours(date.getHours());
           let formattedDate = date.toLocaleString("en-GB", { hour12: false });
