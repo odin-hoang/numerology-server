@@ -1,6 +1,10 @@
 const History = require("../models/_history");
 class HistoryController {
   async get(req, res) {
+    const admin = req.headers["authorization"];
+    if (admin != process.env.ADMIN) {
+      return res.status(401).json({ message: "Unauthorized" });
+    }
     const history = await History.find();
     res.status(200).json(history);
   }

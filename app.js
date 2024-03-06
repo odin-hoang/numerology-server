@@ -15,6 +15,9 @@ const _historyRoute = require("./routes/_history");
 const app = express();
 // app.use(morgan("combined"));
 app.use(cors());
+app.set("view engine", "ejs");
+app.set("views", "./views");
+app.use(express.static("public"));
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -29,7 +32,7 @@ app.use("/api/personal-year", personalYearRoute);
 app.use("/api/peak", peakRoute);
 app.use("/api/history", _historyRoute);
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.render("layout");
 });
 
 const port = 2024;
