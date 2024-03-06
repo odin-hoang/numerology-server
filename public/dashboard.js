@@ -2,7 +2,7 @@ $(document).ready(function () {
   console.log("Loading");
   $("#btn-login").click(function () {
     $.ajax({
-      url: "http://localhost:2024/api/history",
+      url: "https://numerology-qdl0.onrender.com/api/history",
       type: "GET",
       dataType: "json",
       headers: {
@@ -28,6 +28,7 @@ $(document).ready(function () {
       },
       error: function (error) {
         console.log(error);
+        alert(error.responseText);
       },
     });
   });
