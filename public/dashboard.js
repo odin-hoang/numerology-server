@@ -11,18 +11,18 @@ $(document).ready(function () {
       success: function (data) {
         $("#main").show();
         $("#table-body").empty();
-        data.forEach(function (item, index) {
+        data.reverse().forEach(function (item, index) {
           let date = new Date(item.createdAt);
           date.setHours(date.getHours());
           let formattedDate = date.toLocaleString("en-GB", { hour12: false });
-          $("#table-body").append(`
-            <tr>
-                <td>${index + 1}</td>
-                <td>${item.name}</td>
-                <td>${item.dob}</td>
-                <td>${formattedDate}</td>
-            </tr>
-            `);
+          $("#table-body").prepend(`
+                <tr>
+                        <td>${data.length - index}</td>
+                        <td>${item.name}</td>
+                        <td>${item.dob}</td>
+                        <td>${formattedDate}</td>
+                </tr>
+                `);
         });
         console.log(typeof data);
       },
