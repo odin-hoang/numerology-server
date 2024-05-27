@@ -2,7 +2,7 @@ $(document).ready(function () {
   console.log("Loading");
   $("#btn-login").click(function () {
     $.ajax({
-      url: "https://numerology-qdl0.onrender.com/api/history",
+      url: "https://numerology-server.onrender.com/api/history",
       type: "GET",
       dataType: "json",
       headers: {
